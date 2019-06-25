@@ -23,8 +23,9 @@ html {
     padding-left:250px;
     height: 500px;
     width: 500px;
-    border-width: thick;
+    border-width: 50px;
     border-color:white;
     font-family: 'Patua One', cursive;
     font-size: 20px;
+    border-radius: 25px;
 }
