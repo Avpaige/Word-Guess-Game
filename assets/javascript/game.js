@@ -1,28 +1,59 @@
  //Global Variables
   
-  var words =["Mighty Ducks", "Flying V", "Coach Bombay", "Iceland", "Goldberg", "Knuckle Puck"];
+  var words =["the mighty ducks", "flying v", "coach bombay", "iceland", "goldberg", "knuckle puck"];
   var randWord = Math.floor(Math.random() * words.length); 
+  var rightGuess = [];
+  var wrongGuess= [];
   var chosenWord = words [randWord];
   var underScore = [];
+  var wins = 0;
+  var losses =0;
+  var currentWord ="current-word";
+  var placeHoldUnder = document.getElementsByClassName("underScore");
+  var guesses = 10;
 
- var genBlanks = () => {
-    for (var i = 0; i < chosenWord.length; i++){
+
+console.log(chosenWord);
+
+ var generateUnderscore = () => {
+    for (var loop = 0; loop < chosenWord.length; loop++){
         underScore.push ("_");
+       
     }
     return underScore;
 
  }
+
+ console.log (generateUnderscore()); 
  
-document.addEventListener ("keypress", (event) => {
-    console.log(event);
-    var keyWord = String.fromCharCode(event.keyCode);
+document.addEventListener('keypress', (event) => {
+      var keyword= String.fromCharCode(event.keyCode);
+         
+      if(chosenWord.indexOf(keyword) > -1)      {
+        rightGuess.push (keyword);
+        underScore[chosenWord.indexOf(keyword)]= keyword;
 
-    console.log(keyCode);
-    console.log(keyWord);
+        placeHoldUnder.innerHTML = underScore.join(" ");
+        console.log(rightGuess);
+      } else
+        wrongGuess.push(keyword);
+        console.log(wrongGuess);
 
-if (keyWord.indexOf(chosenWord) >-1) {
-    console.log(true);
-}
+console.log(underScore);
+
+if (underScore.join(" ") === chosenWord) {
+    alert ("You Win!") ;
+    wins++;
+
+else (underScore.join(" ") !== chosenWord) 
+    losses++;
+
+    placeHoldUnder[0].innerHTML = underScore().join("");
+
+});
+
+
+});
 
 
 
@@ -30,6 +61,5 @@ if (keyWord.indexOf(chosenWord) >-1) {
 
 
 
- console.log(chosenWord);
- console.log(genBlanks ());
- console.log("Test")
+
+
