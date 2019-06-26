@@ -3,36 +3,54 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Might Ducks Hangman</title>
+  <title>Mighty Ducks Hangman</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Patua+One&display=swap" rel="stylesheet">
+ 
 </head>
 
 <script type="text/javascript" src="assets/javascript/game.js"></script>
 
-<body>
+<body div class =".bg-succes">
 
-<div>
-    <img id="logo" src="assets/images/logo.png">
-    <img id="hang" src="assets/images/hangman.jpg">
-  
 
+
+<div class="jumbotron text-center">
+  <img id="logo" src="assets/images/logo.png">
+  <h1>HANGMAN</h1>
+  <h2 id="directions-text">Press any key to get started!</h2>
 </div>
-  <div class="TextBlock">
-    <p id="directions-text">Press any key to get started!</p>
-    <p id="wins-text">Wins</p>
-    <p id="losses-text">Losses</p>
-    <p>CURRENT WORD</p>
-    <p class="underScore">CURRENT WORD</p>
-    <p id="guesses-left"> Number of Guesses Remaining</p>
-    <p id="userchoice-text"></p>
-    <p id="player-choice"></p>
-   
+
+
+<div class="container-fluid">
+
+
+<div class="container">
+    <div class="row">
+       <div class="col">
+          <p id="word-header">CURRENT WORD</p>
+          <p id="keyword">SPACES HERE</p>
+          <p id="userchoice-text"></p>
+          
+       </div>
+        <div class="col">
+            <p id="guesses-left"> # of Guesses Remaining 10</p>
+            <p id="wrong">Wrong Guesses</p>
+        </div>
+       <div class="col">
+          <p id="wins-text">Wins 0</p>
+          <p id="losses-text">Losses 0</p>
+       </div>
+    </div>
   </div>
 
- <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
- <link rel="stylesheet" type="text/css" href="assets/css/style.css">
- <link href="https://fonts.googleapis.com/css?family=Patua+One&display=swap" rel="stylesheet">
+   
+
+
+ 
+
+</div>
 
 </body>
 

@@ -10,10 +10,11 @@
   var losses =0;
   var currentWord ="current-word";
   var placeHoldUnder = document.getElementsByClassName("underScore");
-  var guesses = 10;
+  var guesses = 11;
+  
+  var displayWord = document.getElementById ("word")
 
-
-console.log(chosenWord);
+console.log("word chosen" + chosenWord);
 
  var generateUnderscore = () => {
     for (var loop = 0; loop < chosenWord.length; loop++){
@@ -28,16 +29,27 @@ console.log(chosenWord);
  
 document.addEventListener('keypress', (event) => {
       var keyword= String.fromCharCode(event.keyCode);
-         
+
       if(chosenWord.indexOf(keyword) > -1)      {
         rightGuess.push (keyword);
         underScore[chosenWord.indexOf(keyword)]= keyword;
 
         placeHoldUnder.innerHTML = underScore.join(" ");
         console.log(rightGuess);
+
+
+        
       } else
         wrongGuess.push(keyword);
+        
+
+
         console.log(wrongGuess);
+              
+      if (guesses===0);
+      losses++;
+      console.log (guesses);
+
 
 console.log(underScore);
 
@@ -45,13 +57,22 @@ if (underScore.join(" ") === chosenWord) {
     alert ("You Win!") ;
     wins++;
 
-else (underScore.join(" ") !== chosenWord) 
-    losses++;
+  }
 
-    placeHoldUnder[0].innerHTML = underScore().join("");
+  document.getElementById("wins-text").innerHTML = ("Wins " + wins);
+  console.log("=" + wins);
 
-});
+  document.getElementById("losses-text").innerHTML = ("Lossess " + losses);
+  console.log("=" + wins);
 
+  document.getElementById("guesses-left").innerHTML = ("# of Guesses Remaining " + guesses);
+  console.log("=" + guessess);
+  
+  document.getElementById("word").innerHTML= ("Test" + underScore);
+
+  document.getElementById("wrong").innerHTML= ("TWrong Guesses" + "<br>" + wrongGuess);
+
+ 
 
 });
 
